@@ -22,7 +22,9 @@ RUN cp ~/vdmtools/code/setup/bashrc.ubuntu ~/.bashrc && \
 WORKDIR /root
 RUN cp ~/vdmtools/code/tools/bin.Linux-x86_64.vdmpp-9.0.7-180126.tar.bz2 ~/ && \
     tar xvf ~/bin.Linux-x86_64.vdmpp-9.0.7-180126.tar.bz2 && \
-	rm -rf ~/vdmtools ~/bin.Linux-x86_64.vdmpp-9.0.7-180126.tar.bz2
+	rm -rf ~/vdmtools ~/bin.Linux-x86_64.vdmpp-9.0.7-180126.tar.bz2 && \
+	echo 'export PATH=/root/vdmpp/bin:$PATH' >> ~/.bashrc && \
+	. ~/.bashrc
 
 WORKDIR /root
 RUN wget https://sourceforge.net/projects/omniorb/files/omniORB/omniORB-4.2.1/omniORB-4.2.1-2.tar.bz2/download -O omniORB-4.2.1.tar.bz2 && \
