@@ -38,4 +38,4 @@ RUN wget https://sourceforge.net/projects/omniorb/files/omniORB/omniORB-4.2.1/om
 
 RUN ln -s /usr/lib/x86_64-linux-gnu/libreadline.so /usr/lib/x86_64-linux-gnu/libreadline.so.6
 
-ENTRYPOINT ["sh"]
+ENTRYPOINT ["bash"]
