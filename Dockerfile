@@ -4,9 +4,9 @@ MAINTAINER nikueater <nikueater@outlook.com>
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y g++ git bison flex filepp \
-            openjdk-8-jdk ant python-dev \
+            python-dev \
             libxml2-dev libncurses5-dev \
-            unixodbc-dev libqt4-dev \
+            unixodbc-dev \
             libreadline-dev \
             wget
 
