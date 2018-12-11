@@ -1,0 +1,6 @@
+vdmpp:
+    image: nikueater/vppde
+    volumes: 
+        - ./:/tmp
+    entrypoint: ""
+    command: /bin/bash -c "LANG=C.UTF-8 vppde -t $$(find /tmp -name \"*.vdmpp\")"

@@ -1,0 +1,19 @@
+class Nat
+types
+public 
+    Nat = <S> * Nat | <O>;
+
+functions
+public
+    succ : (Nat) -> Nat
+    succ (n) ==
+        mk_(<S>, n); 
+        
+public        
+    toInt : (Nat) -> int
+  toInt (n) ==
+      if n = <O>
+          then 0
+          else 1 + (toInt(n.#2));
+
+end Nat
