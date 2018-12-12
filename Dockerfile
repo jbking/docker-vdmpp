@@ -5,14 +5,13 @@ ARG vppbinver="9.0.7-180126"
 
 RUN apt-get update -y && \
     apt-get upgrade -y && \
-    apt-get install -y g++ git bison flex filepp \
+    apt-get install -y git \
             python-dev \
             libxml2-dev \
             libncurses5-dev \
             unixodbc-dev \
             libomniorb4-dev \
-            libreadline-dev \
-            wget
+            libreadline-dev 
 
 WORKDIR /root
 RUN git clone --depth=1 -b ${vppver} https://github.com/vdmtools/vdmtools.git ~/vdmtools && \
