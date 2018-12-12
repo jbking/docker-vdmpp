@@ -3,4 +3,4 @@ vdmpp:
     volumes: 
         - ./:/tmp
     entrypoint: ""
-    command: /bin/bash -c "LANG=C.UTF-8 vppde -t $$(find /tmp -name \"*.vdmpp\")"
+    command: /bin/bash -c "vppde -iDIPQ /tmp/test.arg $$(find /tmp -name \"*.vdmpp\")"

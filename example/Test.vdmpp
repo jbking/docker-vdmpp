@@ -1,0 +1,14 @@
+class Test
+
+operations
+public
+    plusZeroTest : () ==> bool
+    plusZeroTest () ==
+        let n = new Natural()
+        in 
+            return (n.plusZero(<O>) = <O>
+            and n.plusZero(mk_(<S>, <O>)) = mk_(<S>, <O>)
+            and n.plusZero(mk_(<S>, mk_(<S>, <O>))) = mk_(<S>, mk_(<S>, <O>)))
+        post
+            RESULT = true;
+end Test

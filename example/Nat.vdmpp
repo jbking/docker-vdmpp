@@ -1,7 +1,14 @@
-class Nat
+class Natural
 types
 public 
     Nat = <S> * Nat | <O>;
+
+operations
+public
+    plusZero : Nat ==> Nat
+    plusZero (n) == return plusN(n, <O>)
+    post 
+        RESULT = n;
 
 functions
 public
@@ -9,11 +16,22 @@ public
     succ (n) ==
         mk_(<S>, n); 
         
+public
+    plusN : Nat * Nat -> Nat
+    plusN (a, b) ==
+        if b = <O>
+            then a
+            else plusN(succ(a), b.#2);
+
 public        
     toInt : (Nat) -> int
-  toInt (n) ==
+    toInt (n) ==
       if n = <O>
           then 0
           else 1 + (toInt(n.#2));
 
-end Nat
+
+traces
+T0: let n = new Natural() in n.plusZero(mk_(<S>, mk_(<S>, <O>)));
+
+end Natural
