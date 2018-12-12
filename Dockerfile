@@ -14,16 +14,14 @@ RUN apt-get update -y && \
             libreadline-dev 
 
 WORKDIR /root
-RUN git clone --depth=1 -b ${vppver} https://github.com/vdmtools/vdmtools.git ~/vdmtools && \
-	cd ~/vdmtools && \
-    cp ~/vdmtools/code/setup/bashrc.ubuntu ~/.bashrc && \
-	. ~/.bashrc
-    
 RUN mkdir -p /opt && \
+    git clone --depth=1 -b ${vppver} https://github.com/vdmtools/vdmtools.git ~/vdmtools && \
+    cp ~/vdmtools/code/setup/bashrc.ubuntu ~/.bashrc && \
+    mv ~/vdmtools/code/tools/bin.Linux-x86_64.vdmpp-${vppbinver}.tar.bz2 /opt && \
     cd /opt && \
-    cp ~/vdmtools/code/tools/bin.Linux-x86_64.vdmpp-${vppbinver}.tar.bz2 /opt && \
     tar xvf ./bin.Linux-x86_64.vdmpp-${vppbinver}.tar.bz2 && \
-	rm -rf ~/vdmtools ~/bin.Linux-x86_64.vdmpp-${vppbinver}.tar.bz2 
+	rm -rf ~/vdmtools && \
+    rm -f /opt/bin.Linux-x86_64.vdmpp-${vppbinver}.tar.bz2 
 
 ENV PATH /opt/vdmpp/bin:$PATH
 ENV LANG C.UTF-8
