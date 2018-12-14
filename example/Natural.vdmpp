@@ -19,17 +19,17 @@ public
 public
     plusN : Nat * Nat -> Nat
     plusN (a, b) ==
-        if b = <O>
-            then a
-            else plusN(succ(a), b.#2);
-
+        cases b: 
+            <O> -> a,
+            mk_(<S>, b') -> plusN(succ(a), b')
+        end;
 public        
     toInt : (Nat) -> int
     toInt (n) ==
-      if n = <O>
-          then 0
-          else 1 + (toInt(n.#2));
-
+        cases n:
+            <O> -> 0,
+            mk_(<S>, n') -> 1 + (toInt(n'))
+        end;
 
 traces
 T0: let n = new Natural() in n.plusZero(mk_(<S>, mk_(<S>, <O>)));

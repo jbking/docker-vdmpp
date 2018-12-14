@@ -4,3 +4,5 @@ vdmpp:
         - ./:/tmp
     entrypoint: ""
     command: /bin/bash -c "vppde -iDIPQ /tmp/test.arg $$(find /tmp -name \"*.vdmpp\")"
+    #command: /bin/bash -c "vppde -p -R /tmp/vdm.tc $$(find /tmp -name \"*.vdmpp\")"
+    #command: /bin/bash -c "vppde -iDIPQ -R /tmp/vdm.tc /tmp/test.arg $$(find /tmp -name \"*.vdmpp\")"
