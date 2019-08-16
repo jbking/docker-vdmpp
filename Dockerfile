@@ -11,7 +11,8 @@ RUN apt-get update -y && \
             libncurses5-dev \
             unixodbc-dev \
             libomniorb4-dev \
-            libreadline-dev 
+            libreadline-dev \
+            libqtgui4
 
 WORKDIR /root
 RUN mkdir -p /opt && \
@@ -25,6 +26,6 @@ RUN mkdir -p /opt && \
 
 ENV PATH /opt/vdmpp/bin:$PATH
 ENV LANG C.UTF-8
+ENV QT_GRAPHICSSYSTEM=native
 
 RUN ln -s /usr/lib/x86_64-linux-gnu/libreadline.so /usr/lib/x86_64-linux-gnu/libreadline.so.6
-
