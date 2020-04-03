@@ -6,7 +6,7 @@ vdmpp:
         - ./:/tmp
         - /tmp/.X11-unix:/tmp/.X11-unix
         - ${XAUTHORITY}:/tmp/Xauthority
-    command: /bin/bash
+    command: vppgde
     environment:
         - DISPLAY=${DISPLAY}
         - XAUTHORITY=/tmp/Xauthority
