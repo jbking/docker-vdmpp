@@ -3,7 +3,7 @@ vdmpp:
     stdin_open: true
     tty: true
     volumes: 
-        - ./:/tmp
+        - ./:/work
         - /tmp/.X11-unix:/tmp/.X11-unix
         - ${XAUTHORITY}:/tmp/Xauthority
     command: vppgde
