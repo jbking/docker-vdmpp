@@ -12,7 +12,8 @@ RUN apt-get update -y && \
             unixodbc-dev \
             libomniorb4-dev \
             libreadline-dev \
-            libqtgui4
+            libqtgui4 \
+            vim.gtk3
 
 WORKDIR /root
 RUN mkdir -p /opt && \
