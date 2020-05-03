@@ -2,6 +2,7 @@ FROM ubuntu:bionic
 MAINTAINER nikueater <nikueater@outlook.com>
 ARG vppver="v_9.0.7"
 ARG vppbinver="9.0.7-180126"
+ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -y && \
     apt-get upgrade -y && \
